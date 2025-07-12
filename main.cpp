@@ -1,5 +1,6 @@
 #include<iostream>
 #include"funcion.h"
+#include"compra.h"
 using namespace std;
 int main(){
 
