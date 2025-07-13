@@ -1,15 +1,15 @@
 #ifndef TIENDA_H
 #define TIENDA_H
-
+#include<string>
 #include<cstring>
-   struct videojuego{
+    struct videojuego{
         std::string nombre;
-        int precio;
+        float precio; 
         std::string consola;
 
         void imprimir();
     };
     
-    void mostrar_lista_de_juegos(); 
-
+void lista_juegos();
+void ordenarPorNombre(videojuego arreglo[], int cantidad);
 #endif
