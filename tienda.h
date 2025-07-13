@@ -1,11 +1,13 @@
 #ifndef TIENDA_H
 #define TIENDA_H
+
+#include<cstring>
    struct videojuego{
-        string nombre;
+        std::string nombre;
         int precio;
-        string consola;
+        std::string consola;
+
+        void imprimir();
     };
-extern videojuego tienda[50];
-void imprimirJuegosTienda();
 
 #endif
