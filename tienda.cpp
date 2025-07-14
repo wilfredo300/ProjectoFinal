@@ -35,3 +35,19 @@ void ordenarPorNombre(videojuego juegos[], int cantidad) {
         return a.nombre < b.nombre;
     });
 }
+void buscarporconsola(){
+    string consola;
+    cout << "Ingrese la consola a buscar: ";
+    cin.ignore();
+    getline(cin,consola);
+    bool encontrado = false;
+    for(int i = 0; i < 10; i++) {
+        if(tienda[i].consola == consola) {
+            cout << i+1 << ". " << tienda[i].nombre << " - $" << tienda[i].precio << "\n";
+            encontrado = true;
+        }
+    }
+    if(encontrado==false) {
+        cout << "No se encontraron juegos para esta consola.\n";
+    }
+}
