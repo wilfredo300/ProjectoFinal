@@ -34,7 +34,7 @@ int main(){
                     case 2:ordenarPorNombre(tienda,10);
                         lista_juegos();
                         break;
-                    case 3:
+                    case 3:buscarporconsola();
                         break;
                     case 4:
                         break;
