@@ -3,6 +3,7 @@
 #include<string>
 #include<cstring>
     struct videojuego{
+        int id;
         std::string nombre;
         float precio; 
         std::string consola;
