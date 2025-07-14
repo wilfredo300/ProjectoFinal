@@ -3,6 +3,7 @@
 #include<string>
 #include<cstring>
     struct videojuego{
+        int id;
         std::string nombre;
         float precio; 
         std::string consola;
@@ -11,6 +12,6 @@
     };
     
 void lista_juegos();
-void ordenarPorNombre(videojuego arreglo[], int cantidad);
+void ordenarPorNombre();
 void buscarporconsola();
 #endif

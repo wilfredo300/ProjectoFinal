@@ -3,35 +3,47 @@
 #include<iomanip>
 #include<algorithm>
 using namespace std;
-videojuego tienda[50]={
-    {"The Legend of Zelda: Breath of the Wild", 59.99, "Nintendo Switch"},
-    {"Super Mario Odyssey", 49.99, "Nintendo Switch"},
-    {"Animal Crossing: New Horizons", 54.99, "Nintendo Switch"},
-    {"Mario Kart 8 Deluxe", 49.99, "Nintendo Switch"},
-    {"Splatoon 3", 59.99, "Nintendo Switch"},
-    {"God of War: Ragnarok", 69.99, "PlayStation 5"},
-    {"FIFA 23", 59.99, "PlayStation 5"},
-    {"Horizon Forbidden West", 59.99, "PlayStation 5"},
-    {"Spider-Man: Miles Morales", 49.99, "PlayStation 5"},
-    {"Gran Turismo 7", 69.99, "PlayStation 5"},
+videojuego tienda[10]={
+    {1,"The Legend of Zelda: Breath of the Wild", 59.99, "Nintendo Switch"},
+    {2,"Super Mario Odyssey", 49.99, "Nintendo Switch"},
+    {3,"Animal Crossing: New Horizons", 54.99, "Nintendo Switch"},
+    {4,"Mario Kart 8 Deluxe", 49.99, "Nintendo Switch"},
+    {5,"Splatoon 3", 59.99, "Nintendo Switch"},
+    {6,"God of War: Ragnarok", 69.99, "PlayStation 5"},
+    {7,"FIFA 23", 59.99, "PlayStation 5"},
+    {8,"Horizon Forbidden West", 59.99, "PlayStation 5"},
+    {9,"Spider-Man: Miles Morales", 49.99, "PlayStation 5"},
+    {10,"Gran Turismo 7", 69.99, "PlayStation 5"},
 
 };
 
 void videojuego::imprimir(){
-    cout<<nombre<<", $"<<precio<<", "<<consola<<endl;
+    cout<<right<<setfill(' ')<<setw(4)<<id
+        <<left<<" "<<setw(40)<<nombre
+        <<"$"<<right<<setw(8)<<precio
+        <<" "<<left<<setw(30)<<consola<<endl;
     
 }
 void lista_juegos(){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
-    for(int i=0;i<5;i++){
-        cout<<setfill('0')<<setw(3)<<i+1<<" ";tienda[i].imprimir();
+    for(int i=0;i<10;i++){
+        tienda[i].imprimir();
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
 }
-void ordenarPorNombre(videojuego juegos[], int cantidad) {
-    std::sort(juegos, juegos + cantidad, [](const videojuego &a, const videojuego &b) {
+void ordenarPorNombre(){
+    videojuego copia[10];
+    for(int i = 0; i < 10; i++) {
+        copia[i] = tienda[i];
+    }
+    sort(copia, copia + 10, [](const videojuego &a, const videojuego &b) {
         return a.nombre < b.nombre;
     });
+    cout << "----- JUEGOS ORDENADOS ALFABÉTICAMENTE -----\n";
+    for(int i = 0; i < 10; i++) {
+        copia[i].imprimir();
+    }
+    cout << "-------------------------------------------\n";
 }
 void buscarporconsola(){
     string consola;
@@ -41,7 +53,7 @@ void buscarporconsola(){
     bool encontrado = false;
     for(int i = 0; i < 10; i++) {
         if(tienda[i].consola == consola) {
-            cout << i+1 << ". " << tienda[i].nombre << " - $" << tienda[i].precio << "\n";
+            cout << i+1 << ". ";tienda[i].imprimir();
             encontrado = true;
         }
     }
