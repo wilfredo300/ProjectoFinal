@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    extern videojuego tienda[10];
+    videojuego copia[10];
     int op;
     do{
         system("cls");
@@ -31,8 +31,7 @@ int main(){
                 switch(subop){
                     case 1:lista_juegos();
                         break;
-                    case 2:ordenarPorNombre(tienda,10);
-                        lista_juegos();
+                    case 2:ordenarPorNombre();
                         break;
                     case 3:buscarporconsola();
                         break;
