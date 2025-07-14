@@ -18,13 +18,15 @@ videojuego tienda[50]={
 };
 
 void videojuego::imprimir(){
-    cout<<nombre<<", $"<<precio<<", "<<consola<<endl;
+    cout<<left<<setfill(' ')<<setw(40)<<nombre
+        <<"$"<<right<<setw(8)<<precio
+        <<" "<<left<<setw(30)<<consola<<endl;
     
 }
 void lista_juegos(){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
     for(int i=0;i<5;i++){
-        cout<<setfill('0')<<setw(3)<<i+1<<" ";tienda[i].imprimir();
+        cout<<setfill('0')<<right<<setw(3)<<i+1<<" ";tienda[i].imprimir();
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
 }
