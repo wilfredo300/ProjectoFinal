@@ -12,6 +12,6 @@
     };
     
 void lista_juegos();
-void ordenarPorNombre(videojuego arreglo[], int cantidad);
+void ordenarPorNombre();
 void buscarporconsola();
 #endif

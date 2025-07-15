@@ -3,7 +3,11 @@
 #include<iomanip>
 #include<algorithm>
 using namespace std;
+<<<<<<< HEAD
 videojuego tienda[50]={
+=======
+videojuego tienda[10]={
+>>>>>>> Colaboracion-2
     {1,"The Legend of Zelda: Breath of the Wild", 59.99, "Nintendo Switch"},
     {2,"Super Mario Odyssey", 49.99, "Nintendo Switch"},
     {3,"Animal Crossing: New Horizons", 54.99, "Nintendo Switch"},
@@ -26,15 +30,28 @@ void videojuego::imprimir(){
 }
 void lista_juegos(){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
+<<<<<<< HEAD
     for(int i=0;i<5;i++){
+=======
+    for(int i=0;i<10;i++){
+>>>>>>> Colaboracion-2
         tienda[i].imprimir();
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
 }
-void ordenarPorNombre(videojuego juegos[], int cantidad) {
-    std::sort(juegos, juegos + cantidad, [](const videojuego &a, const videojuego &b) {
+void ordenarPorNombre(){
+    videojuego copia[10];
+    for(int i = 0; i < 10; i++) {
+        copia[i] = tienda[i];
+    }
+    sort(copia, copia + 10, [](const videojuego &a, const videojuego &b) {
         return a.nombre < b.nombre;
     });
+    cout << "----- JUEGOS ORDENADOS ALFABÉTICAMENTE -----\n";
+    for(int i = 0; i < 10; i++) {
+        copia[i].imprimir();
+    }
+    cout << "-------------------------------------------\n";
 }
 void buscarporconsola(){
     string consola;
@@ -44,7 +61,7 @@ void buscarporconsola(){
     bool encontrado = false;
     for(int i = 0; i < 10; i++) {
         if(tienda[i].consola == consola) {
-            cout << i+1 << ". " << tienda[i].nombre << " - $" << tienda[i].precio << "\n";
+            cout << i+1 << ". ";tienda[i].imprimir();
             encontrado = true;
         }
     }
