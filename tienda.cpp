@@ -3,11 +3,7 @@
 #include<iomanip>
 #include<algorithm>
 using namespace std;
-<<<<<<< HEAD
-videojuego tienda[50]={
-=======
 videojuego tienda[10]={
->>>>>>> Colaboracion-2
     {1,"The Legend of Zelda: Breath of the Wild", 59.99, "Nintendo Switch"},
     {2,"Super Mario Odyssey", 49.99, "Nintendo Switch"},
     {3,"Animal Crossing: New Horizons", 54.99, "Nintendo Switch"},
@@ -30,11 +26,8 @@ void videojuego::imprimir(){
 }
 void lista_juegos(){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
-<<<<<<< HEAD
-    for(int i=0;i<5;i++){
-=======
+
     for(int i=0;i<10;i++){
->>>>>>> Colaboracion-2
         tienda[i].imprimir();
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
