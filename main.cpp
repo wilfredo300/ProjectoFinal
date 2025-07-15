@@ -2,16 +2,14 @@
 #include<iomanip>
 #include "tienda.h"
 #include "carrito.h"
+#include <ctime>
 using namespace std;
 
 int main(){
-<<<<<<< HEAD
+    extern videojuego tienda[10];
     videojuego copia[10];
-=======
-    
->>>>>>> carrito
     int op;
-    int contadorCarrito=0;;
+    int contadorCarrito=0;
     
     do{
         system("cls");
@@ -35,14 +33,9 @@ int main(){
                 cout << "Opcion: ";
                 cin >> subop;
                 switch(subop){
-                    case 1:lista_juegos(tienda, 5);
+                    case 1:lista_juegos(tienda,10);
                         break;
-<<<<<<< HEAD
                     case 2:ordenarPorNombre();
-=======
-                    case 2:ordenarPorNombre(tienda,10);
-                        lista_juegos(tienda,5);
->>>>>>> carrito
                         break;
                     case 3:buscarporconsola();
                         break;
@@ -50,7 +43,7 @@ int main(){
                         int id; 
                         cout<<"Ingrese el id del juego para agregar al carrito: \n";
                         cin>>id;
-                        agregar_carrito(tienda,5,id,contadorCarrito);
+                        agregar_carrito(tienda,10,id,contadorCarrito);
                         cout<<"Se modifica el contador?"<<contadorCarrito<<endl;
                         break;
                     }
@@ -63,6 +56,20 @@ int main(){
             case 2: 
                 for(int i=0;i<contadorCarrito;i++){
                     carrito[i].imprimir();
+                }
+                cout << "\n1. Pagar\n";
+                cout << "2. Quitar juego del carrito\n";
+                cout << "0. Volver\n";
+                cout << "Opcion: ";
+                int subopcion;
+                cin >> subopcion;
+                switch(subopcion){
+                    case 1:pagar(contadorCarrito);
+                        break;
+                    case 2:
+                        break;
+                    case 0:
+                        break;
                 }
                 system("pause");
                 break;

@@ -10,8 +10,8 @@
 
         void imprimir();
     };
-extern videojuego tienda[50];
+
 void lista_juegos(videojuego[], int);
-void ordenarPorNombre(videojuego arreglo[], int cantidad);
+void ordenarPorNombre();
 void buscarporconsola();
 #endif
