@@ -24,10 +24,10 @@ void videojuego::imprimir(){
         <<" "<<left<<setw(30)<<consola<<endl;
     
 }
-void lista_juegos(){
+void lista_juegos(videojuego juegos[], int size){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
-    for(int i=0;i<5;i++){
-        tienda[i].imprimir();
+    for(int i=0;i<size;i++){
+        juegos[i].imprimir();
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
 }
