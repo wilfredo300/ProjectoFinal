@@ -12,6 +12,6 @@
     extern int contadorComprados;
     void agregar_carrito(videojuego [],int ,int id,int &);
     void pagar(compra [], int&, int&);
-    
+    void quitardelCarrito(videojuego[],int,int &);
     
 #endif
