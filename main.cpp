@@ -55,7 +55,7 @@ int main(){
             }
             case 2: 
                 for(int i=0;i<contadorCarrito;i++){
-                    carrito[i].imprimir();
+                    carrito[i].imprimir(); 
                 }
                 if(contadorCarrito ==0){
                     cout<<"No hay juegos en el carrito";
@@ -79,7 +79,7 @@ int main(){
 
             case 3:
                 for(int i=0; i<contadorComprados;i++){
-                    hist[i].juego.imprimir();
+                    hist[i].imprimir();
                 }
                 system("pause");
             break;

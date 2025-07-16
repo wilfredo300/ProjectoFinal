@@ -4,6 +4,8 @@
     struct compra{
         videojuego juego;
         std::string fecha_hora;
+
+        void imprimir();
     };
     extern videojuego carrito[10];
     extern compra hist[10];
