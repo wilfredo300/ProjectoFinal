@@ -29,7 +29,7 @@ void agregar_carrito(videojuego juegos[],int size,int id,int &contador){
                 contador++;
                 cout<<"Se agrego el juego al carrito\n";
                 encontrado =true;   
-            }
+            } //evitar repeticiones al elegir jueg
         }
         if (encontrado==false){
             cout<<"El id no existe. No se agrego ningun juego\n";

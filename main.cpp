@@ -67,9 +67,11 @@ int main(){
                 int subopcion;
                 cin >> subopcion;
                 switch(subopcion){
-                    case 1:pagar(hist, contadorCarrito, contadorComprados);
+                    case 1:
+                        pagar(hist, contadorCarrito, contadorComprados);
                         break;
-                    case 2:
+                    case 2: //quitar juego del carrito
+                        
                         break;
                     case 0:
                         break;
@@ -77,15 +79,16 @@ int main(){
                 system("pause");
                 break;
 
-            case 3:
+            case 3:  //juegos comprados
                 for(int i=0; i<contadorComprados;i++){
-                    hist[i].imprimir();
+                    hist[i].imprimir(); //imprime los juegos comprados por fecha y hora
                 }
                 system("pause");
             break;
             case 0: break;
         }
         system("cls");
+        
     } while(op!=0);
     return 0;
 }
