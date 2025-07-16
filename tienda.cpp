@@ -52,8 +52,8 @@ void buscarporconsola(){
     getline(cin,consola);
     bool encontrado = false;
     for(int i = 0; i < 10; i++) {
-        if(tienda[i].consola == consola) {
-            cout << i+1 << ". ";tienda[i].imprimir();
+        if(tienda[i].consola.find(consola) != string::npos) {
+            tienda[i].imprimir();
             encontrado = true;
         }
     }

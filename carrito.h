@@ -5,9 +5,11 @@
         videojuego juego;
         std::string fecha_hora;
     };
-    extern videojuego carrito[50];
-    extern compra hist[50];
+    extern videojuego carrito[10];
+    extern compra hist[10];
+    extern int contadorComprados;
     void agregar_carrito(videojuego [],int ,int id,int &);
-    void pagar(int &);
-
+    void pagar(compra [], int&, int&);
+    
+    
 #endif

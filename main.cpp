@@ -43,8 +43,8 @@ int main(){
                         int id; 
                         cout<<"Ingrese el id del juego para agregar al carrito: \n";
                         cin>>id;
-                        agregar_carrito(tienda,10,id,contadorCarrito);
-                        cout<<"Se modifica el contador?"<<contadorCarrito<<endl;
+                        agregar_carrito(tienda,10,id, contadorCarrito);
+                       
                         break;
                     }
                     case 0:
@@ -57,6 +57,9 @@ int main(){
                 for(int i=0;i<contadorCarrito;i++){
                     carrito[i].imprimir();
                 }
+                if(contadorCarrito ==0){
+                    cout<<"No hay juegos en el carrito";
+                }
                 cout << "\n1. Pagar\n";
                 cout << "2. Quitar juego del carrito\n";
                 cout << "0. Volver\n";
@@ -64,7 +67,7 @@ int main(){
                 int subopcion;
                 cin >> subopcion;
                 switch(subopcion){
-                    case 1:pagar(contadorCarrito);
+                    case 1:pagar(hist, contadorCarrito, contadorComprados);
                         break;
                     case 2:
                         break;
@@ -74,7 +77,12 @@ int main(){
                 system("pause");
                 break;
 
-            case 3: break;
+            case 3:
+                for(int i=0; i<contadorComprados;i++){
+                    hist[i].juego.imprimir();
+                }
+                system("pause");
+            break;
             case 0: break;
         }
         system("cls");

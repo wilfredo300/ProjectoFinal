@@ -5,8 +5,9 @@
 #include <ctime>
 using namespace std;
 
-videojuego carrito[50];
-compra hist[50];
+videojuego carrito[10];
+compra hist[10];
+int contadorComprados=0;
 
 
 
@@ -28,7 +29,8 @@ void agregar_carrito(videojuego juegos[],int size,int id,int &contador){
     else
         cout<<"El carrito esta lleno";
 }
-void pagar(int &contadorCarrito){
+void pagar(compra hist[], int &contadorCarrito, int &contadorComprados){
+    
     if(contadorCarrito==0){
         cout<<"No hay ningun juego en el carrito";
     }
@@ -37,15 +39,16 @@ void pagar(int &contadorCarrito){
         time_t ahora = time(0);
         tm* tiempo = localtime(&ahora);
         string hora_actual =to_string(tiempo->tm_hour) + ":" + 
-                           to_string(tiempo->tm_min) + ":" + 
-                           to_string(tiempo->tm_sec);
+        to_string(tiempo->tm_min) + ":" + 
+        to_string(tiempo->tm_sec);
         for(int i = 0; i < contadorCarrito; i++){
-        hist[i].juego = carrito[i];
-        hist[i].fecha_hora = hora_actual;
+            hist[contadorComprados+i].juego = carrito[i];
+            hist[contadorComprados+i].fecha_hora = hora_actual;
         }
+        contadorComprados += contadorCarrito; //cantidad de juegos comprados
         cout<<"Compra existosa";
         cout << "\n\tHora de compra: " << hora_actual<< endl;
-        
+        contadorCarrito=0;
         
     }
 }
