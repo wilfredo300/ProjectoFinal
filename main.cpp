@@ -20,45 +20,56 @@ int main(){
         cout << "0. Salir\n";
         cout << "Ingrese una opcion: ";
         cin >>op;
+        int subop;
         switch(op){
             case 1:{
-                int subop;
-                system("cls");
-                cout << "--- JUEGOS DISPONIBLES ---\n";
-                cout << "1. Mostrar todos\n";
-                cout << "2. Ordenar alfabeticamente\n";
-                cout << "3. Buscar por consola\n";
-                cout << "4. Agregar al carrito\n";
-                cout << "0. Volver\n";
-                cout << "Opcion: ";
-                cin >> subop;
-                switch(subop){
-                    case 1:lista_juegos(tienda,10);
-                        break;
-                    case 2:ordenarPorNombre();
-                        break;
-                    case 3:buscarporconsola();
-                        break;
-                    case 4:{
-                        int id; 
-                        cout<<"Ingrese el id del juego para agregar al carrito: \n";
-                        cin>>id;
-                        agregar_carrito(tienda,10,id, contadorCarrito);
-                       
-                        break;
+                do{
+                    //system("cls");
+                    cout << "--- JUEGOS DISPONIBLES ---\n";
+                    cout << "1. Mostrar todos\n";
+                    cout << "2. Ordenar alfabeticamente\n";
+                    cout << "3. Buscar por consola\n";
+                    cout << "4. Agregar al carrito\n";
+                    cout << "0. Volver\n";
+                    cout << "Opcion: ";
+                    cin >> subop;
+                    switch(subop){
+                        case 1:lista_juegos(tienda,10);
+                            break;
+                        case 2:
+                            system("cls");
+                            ordenarPorNombre();
+                            break;
+                        case 3:
+                            system("cls");
+                            buscarporconsola();
+                            break;
+                        case 4:{
+                            int id; 
+                            cout<<"Ingrese el id del juego para agregar al carrito: \n";
+                            cin>>id;
+                            agregar_carrito(tienda,10,id, contadorCarrito);
+                        
+                            break;
+                        }
+                        case 0:
+                            break;
+                        default:  
+                            cout<<"Opcion no valida\n";
                     }
-                    case 0:
-                        break;
-                }
-                system("pause");
+                    system("pause");
+                }while(subop != 0);    
                 break;
+                
             }
+           
             case 2: 
                 for(int i=0;i<contadorCarrito;i++){
+                    cout<<i+1<<".-";
                     carrito[i].imprimir(); 
                 }
                 if(contadorCarrito ==0){
-                    cout<<"No hay juegos en el carrito";
+                    cout<<"No hay juegos en el carrito\n";
                 }
                 cout << "\n1. Pagar\n";
                 cout << "2. Quitar juego del carrito\n";
@@ -70,11 +81,22 @@ int main(){
                     case 1:
                         pagar(hist, contadorCarrito, contadorComprados);
                         break;
+<<<<<<< HEAD
                     case 2: //quitar juego del carrito
                         
+=======
+                    case 2:
+                        int seleccion;
+                        cout << "Seleccione el numero del juego a quitar (0 para cancelar): ";
+                        cin >> seleccion;
+                        quitardelCarrito(tienda,seleccion,contadorCarrito);
+>>>>>>> 127596741aeed3e499606178474088ea117d58b5
                         break;
                     case 0:
                         break;
+                    default:  
+                        cout<<"Opcion no valida\n";
+                        
                 }
                 system("pause");
                 break;
@@ -86,6 +108,9 @@ int main(){
                 system("pause");
             break;
             case 0: break;
+            default:  
+                cout<<"Opcion no valida\n";
+                system("pause");
         }
         system("cls");
         

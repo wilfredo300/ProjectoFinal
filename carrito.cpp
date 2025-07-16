@@ -65,3 +65,14 @@ void pagar(compra hist[], int &contadorCarrito, int &contadorComprados){
         
     }
 }
+void quitardelCarrito(videojuego juego[],int seleccion,int &contador ){
+    if(seleccion > 0 && seleccion <= contador) {
+        cout << carrito[seleccion-1].nombre << " eliminado del carrito.\n";
+        for(int i = seleccion-1; i < contador-1; i++) {
+            carrito[i] = carrito[i+1];
+        }
+        contador--;
+    } else if(seleccion != 0) {
+        cout << "Seleccion no valida.\n";
+    }
+}
