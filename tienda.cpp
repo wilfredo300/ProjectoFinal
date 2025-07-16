@@ -26,14 +26,8 @@ void videojuego::imprimir(){
 }
 void lista_juegos(videojuego juegos[], int size){
     cout   <<"xxxxxxxxLista de juegos disponiblesxxx"<<endl;
-<<<<<<< HEAD
-
-    for(int i=0;i<10;i++){
-        tienda[i].imprimir();
-=======
     for(int i=0;i<size;i++){
         juegos[i].imprimir();
->>>>>>> carrito
     }
     cout    <<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n";
 }
