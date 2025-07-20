@@ -2,11 +2,11 @@
 #include"tienda.h"
 #include"carrito.h"
 #include<iomanip>
+#include"global.h"
 #include <ctime>
 using namespace std;
-
-videojuego carrito[10];
-compra hist[10];
+videojuego carrito[size];
+compra hist[size];
 int contadorComprados=0;
 
 void compra::imprimir(){
@@ -22,7 +22,7 @@ void compra::imprimir(){
 
 void agregar_carrito(videojuego juegos[],int size,int id,int &contador){
     bool encontrado =false;
-    if(contador<=50){    
+    if(contador<size){    
         for(int i=0;i<size;i++){
             if(juegos[i].id==id){
                 carrito[contador]=juegos[i];
@@ -33,6 +33,7 @@ void agregar_carrito(videojuego juegos[],int size,int id,int &contador){
         }
         if (encontrado==false){
             cout<<"El id no existe. No se agrego ningun juego\n";
+            system("pause");
         }
     }
     else

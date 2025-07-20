@@ -1,9 +1,11 @@
 #include<iostream>
 #include"tienda.h"
+#include"global.h"
+
 #include<iomanip>
 #include<algorithm>
 using namespace std;
-videojuego tienda[10]={
+videojuego tienda[size]={
     {1,"The Legend of Zelda: Breath of the Wild", 59.99, "Nintendo Switch"},
     {2,"Super Mario Odyssey", 49.99, "Nintendo Switch"},
     {3,"Animal Crossing: New Horizons", 54.99, "Nintendo Switch"},
@@ -59,5 +61,15 @@ void buscarporconsola(){
     }
     if(encontrado==false) {
         cout << "No se encontraron juegos para esta consola.\n";
+    }
+}
+
+void ultimaLista(int ultOrden){
+     if(ultOrden==1){
+            system("cls");
+            lista_juegos(tienda,size);
+    }else{
+            system("cls");
+            ordenarPorNombre();
     }
 }

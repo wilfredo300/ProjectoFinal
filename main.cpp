@@ -2,17 +2,19 @@
 #include<iomanip>
 #include "tienda.h"
 #include "carrito.h"
+#include "global.h"
 #include <ctime>
 using namespace std;
 
 int main(){
-    extern videojuego tienda[10];
-    videojuego copia[10];
+    extern videojuego tienda[size];
+    videojuego copia[size];
     int op;
+    int ultOrden=0;
     int contadorCarrito=0;
     cout << "----------- TIENDA DE VIDEOJUEGOS -----------\n";
-        do{
-            //system("cls");
+        do{ 
+            ultimaLista(ultOrden);
             cout << "--- JUEGOS DISPONIBLES ---\n";
             cout << "1. Ordenar por Id\n";
             cout << "2. Ordenar alfabeticamente\n";
@@ -24,11 +26,13 @@ int main(){
             cout << "Opcion: ";
             cin >> op;
             switch(op){
-                case 1:lista_juegos(tienda,10);
+                case 1:lista_juegos(tienda,size);
+                ultOrden=op;
                     break;
                 case 2:
                     system("cls");
                     ordenarPorNombre();
+                    ultOrden=op;
                     break;
                 case 3:
                     system("cls");
@@ -38,10 +42,11 @@ int main(){
                     int id; 
                     cout<<"Ingrese el id del juego para agregar al carrito (0 para regresar) \n";
                     do{
+                        ultimaLista(ultOrden);
+                        cout<<"Ingrese otro juego o presione 0 para salir: "<<endl;
                         cin>>id;
-                        if(id>0 && id<=10){
-                            agregar_carrito(tienda,10,id, contadorCarrito);
-                            cout<<"Ingrese otro juego o presione 0 para salir: "<<endl;
+                        if(id>0 && id<=size){
+                            agregar_carrito(tienda,size,id, contadorCarrito);
                         }else if(id==0) 
                             break;
                         else {

@@ -12,6 +12,7 @@
     };
 
 void lista_juegos(videojuego[], int);
+void ultimaLista(int);
 void ordenarPorNombre();
 void buscarporconsola();
 #endif
