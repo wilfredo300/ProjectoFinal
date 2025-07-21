@@ -40,7 +40,8 @@ int main(){
     } while (opcion != 0 && ingresado==false);
             
             do{ 
-                ultimaLista(ultOrden);
+                
+                //ultimaLista(ultOrden);
                 cout << "--- JUEGOS DISPONIBLES ---\n";
                 cout << "1. Ordenar por Id\n";
                 cout << "2. Ordenar alfabeticamente\n";
@@ -53,7 +54,6 @@ int main(){
                 cin >> op;
                 switch(op){
                     case 1:lista_juegos(tienda,size);
-                    system("cls");
                     ultOrden=op;
                     break;
                     case 2:
