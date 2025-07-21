@@ -1,6 +1,8 @@
 #include<string>
 #include<iostream>
+#include"global.h"
 #include"usuario.h"
+using namespace std;
 int contCuentas=3;
 cuenta cuentas[size]{
     {"usuario1@gmail.com,contraseña1"},
@@ -21,15 +23,36 @@ void signin(std::string usuario,std::string contra,cuenta cuentas[],int contCuen
         }
     }
 }
-void agregarCuenta(cuenta cuentas[], int& contCuentas){
+void agregarCuenta(cuenta cuentas[], int& contCuentas) {
+    bool yaExiste;
     string nuevoUsuario;
-    bool yaExiste=false;
-    
-    cout<<"Ingresa un usuario: "<<endl;
-    cin>>nuevoUsuario;
-    for(int i=0; i<n; i++){
-        if(nuevoUsuario==cuentas[i].usuario){
-            yaExiste=true;
+    string nuevaContra;
+    do {
+        yaExiste = false;
+        cout << "Ingresa un usuario: ";
+        cin >> nuevoUsuario;
+        for (int i = 0; i < contCuentas; i++) {
+            if (nuevoUsuario == cuentas[i].usuario) {
+                yaExiste = true;
+                cout << "El usuario ya existe, intenta nuevamente." << endl;
+                break;
+            }
         }
-    }
+    } while (yaExiste);
+    do {
+        cout << "Ingresa una contraseña (mínimo 6 caracteres): ";
+        cin >> nuevaContra;
+
+        if (nuevaContra.length() < 6) {
+            cout << "Contraseña demasiado corta. Intenta nuevamente." << endl;
+        }
+
+    } while (nuevaContra.length() < 6);
+
+    cuentas[contCuentas].usuario = nuevoUsuario;
+    cuentas[contCuentas].contra = nuevaContra;
+    contCuentas++;
+
+    cout << "Cuenta creada con éxito." << endl;
 }
+   
