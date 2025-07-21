@@ -52,8 +52,8 @@ int main(){
                 cout << "Opcion: ";
                 cin >> op;
                 switch(op){
-                    system("cls");
                     case 1:lista_juegos(tienda,size);
+                    system("cls");
                     ultOrden=op;
                     break;
                     case 2:

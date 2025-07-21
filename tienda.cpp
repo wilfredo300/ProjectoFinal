@@ -68,7 +68,7 @@ void ultimaLista(int ultOrden){
      if(ultOrden==1){
             system("cls");
             lista_juegos(tienda,size);
-    }else if(ultOrden!=0){
+    }else if(ultOrden ==2){
             system("cls");
             ordenarPorNombre();
     }
