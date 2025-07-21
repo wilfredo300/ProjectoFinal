@@ -4,25 +4,43 @@
 #include"usuario.h"
 using namespace std;
 int contCuentas=3;
-cuenta cuentas[size]{
-    {"usuario1@gmail.com,contraseña1"},
-    {"usuario2@gmail.com,contraseña2"},
-    {"usuario3@gmail.com,contraseña3"}
+cuenta cuentas[MAX_CUENTAS]{
+    {"usuario1@gmail.com","contrasena1"},
+    {"usuario2@gmail.com","contrasena2"},
+    {"usuario3@gmail.com","contrasena3"}
 };
 
-void signin(std::string usuario,std::string contra,cuenta cuentas[],int contCuentas){ 
-    for(int i=0;i<contCuentas;i++){
-        if(usuario==cuentas[i].usuario){
-            if(contra==cuentas[i].contra){
-                std::cout<<"Has ingresado con éxito"<<std::endl;
-            }else{
-                std::cout<<"La contraseña es incorrecta"<<std::endl;
-            }  
-        }else{
-            std::cout<<"El usuario no está registrado"<<std::endl;
+bool signin(cuenta cuentas[], int contCuentas) {
+    bool encontrado = false;
+    string usuario;
+    string contra;
+
+    cout << "Ingresa tu usuario: ";
+    cin.ignore(); // para limpiar el búfer antes de getline
+    getline(cin, usuario);
+
+    cout << "Ingresa tu contraseña: ";
+    getline(cin, contra);
+
+    for (int i = 0; i < contCuentas; i++) {
+        if (usuario == cuentas[i].usuario) {
+            encontrado = true;
+            if (contra == cuentas[i].contra) {
+                cout << "Has ingresado con éxito" << endl;
+                return true;
+            } else {
+                cout << "La contraseña es incorrecta" << endl;
+                return false;
+            }
+            break;
         }
     }
+    if (!encontrado) {
+        cout << "El usuario no está registrado" << endl;
+        return false;
+    }
 }
+
 void agregarCuenta(cuenta cuentas[], int& contCuentas) {
     bool yaExiste;
     string nuevoUsuario;
